@@ -5,9 +5,10 @@ let user={
     role:'student',
     isActive:true
 }
-console.log(user.email,user.name)
-user.lastlogin='2026-01-01'
-user.student='admin'
-delete user.isActive
-console.log(Object.keys(user))
-console.log(user)
+console.log(user.name, user.email);
+ user.lastLogin= "2024-06-15 10:00:00";
+ user.role="admin";
+ delete user.isActive;
+ console.log(Object.keys(user));
+ console.log(user);
+ 
