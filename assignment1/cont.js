@@ -1,16 +1,17 @@
 //assignment1:smart login status engine
 
-let isLoggedIn = true;
-let isProfileComplete = false;
-let message;
-if (!isLoggedIn) {
-  message = "Please login";
-} else if (isLoggedIn && !isProfileComplete) {
-  message = "Complete your profile";
-} else {
-  message = "Welcome back!";
+let isLoggedIn=true;
+let isProfileComplete=true;
+if( !isLoggedIn){
+    console.log("please login to continue")
 }
-console.log(message);
+ else if(isLoggedIn && !isProfileComplete){
+    console.log("please complete your profile")
+ }
+ else if(isLoggedIn && isProfileComplete){    
+        console.log("welcome to the dashboard")
+    }
+
 
 
 //assignment2:course price tag labeler
