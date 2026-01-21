@@ -1,20 +1,36 @@
-//assignment 1:shopping cart summary for an e-commerce website
-let cart = [
+// You are building a shopping cart summary for an e-commerce website.
+
+// Test Data : 
+const cart = [
   { id: 101, name: "Laptop", price: 60000, quantity: 1, inStock: true },
   { id: 102, name: "Mouse", price: 800, quantity: 2, inStock: true },
   { id: 103, name: "Keyboard", price: 1500, quantity: 1, inStock: false },
   { id: 104, name: "Monitor", price: 12000, quantity: 1, inStock: true }
 ];
-let inStockItems = cart.filter(item => item.inStock);
-let priceList = inStockItems.map(item => ({
-  name: item.name,
-  totalPrice: item.price * item.quantity
-}));
-let grandTotal = priceList.reduce((sum, item) => sum + item.totalPrice, 0);
-let mouseDetails = cart.find(item => item.name === "Mouse");
-let keyboardIndex = cart.findIndex(item => item.name === "Keyboard");
-console.log(inStockItems, priceList, grandTotal, mouseDetails, keyboardIndex);
 
+// Tasks:
+    
+// Use filter() to get only inStock products
+     let res=cart.filter((c)=>c.inStock===true)
+     console.log(res)
+// Use map() to create a new array with:  { name, totalPrice }
+  let totalPrice=cart.reduce((acc,c)=>acc+c.price,0)
+  let ans2=cart.map((c)=>{
+    return{
+        name:c.name,totalPrice
+    }
+  })
+  console.log(ans2)
+    
+// Use reduce() to calculate grand total cart value
+    let res3= cart.reduce((acc,c)=> acc+c.price,0)
+    console.log(res3)
+// Use find() to get details of "Mouse"
+    let res4=cart.find((c)=>c.name=="Mouse")
+    console.log(res4)
+// Use findIndex() to find the position of "Keyboard"
+let res5 = cart.findIndex((c) => c.name == "Keyboard");
+console.log(res5);
 
 
 //assignment2:student performance dashboard
