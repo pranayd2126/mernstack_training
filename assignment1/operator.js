@@ -8,4 +8,5 @@ function amount()
     console.log(a)
 }
 console.log("total amount is:\n")
-let result=amount()
+let r=amount()
+console.log(r)
