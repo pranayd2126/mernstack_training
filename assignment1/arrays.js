@@ -32,28 +32,34 @@ const cart = [
 let res5 = cart.findIndex((c) => c.name == "Keyboard");
 console.log(res5);
 
+ let studnet =[
+    
+        {sno:1,name:"prranay",age:21}
+        ,{sno:2,name:"ravi",age:22}
+        ,{sno:3,name:"rajesh",age:19}
+        ,{sno:4,name:"suresh",age:15}   
 
-//assignment2:student performance dashboard
-let students = [
-  { id: 1, name: "Ravi", marks: 78 },
-  { id: 2, name: "Anjali", marks: 92 },
-  { id: 3, name: "Kiran", marks: 35 },
-  { id: 4, name: "Sneha", marks: 88 },
-  { id: 5, name: "Arjun", marks: 40 }
-];
-let passedStudents = students.filter(s => s.marks >= 40);
-let gradedStudents = passedStudents.map(s => ({
-  ...s,
-  grade:
-    s.marks >= 90 ? "A" :
-    s.marks >= 75 ? "B" :
-    s.marks >= 60 ? "C" : "D"
-}));
-let averageMarks =
-  students.reduce((sum, s) => sum + s.marks, 0) / students.length;
-let topScorer = students.find(s => s.marks === 92);
-let kiranIndex = students.findIndex(s => s.name === "Kiran");
-console.log(gradedStudents, averageMarks, topScorer, kiranIndex);
+    
+]
+
+// find studnets age less then 20
+
+let res= studnet.filter((s)=>s.age<20);
+//console.log(res);
+
+
+ //inceremnt age by 3 yaers or rajesh
+ let res12= studnet.map((s)=>{
+    if( s.name=="rajesh"){
+        s.age+=3;
+    }
+    return s;
+ })
+   // console.log(res12);
+
+let res2= studnet.reduce((acc,e)=>acc+e.age,0);
+console.log(res2);
+
 
 
 //assignment3:employee payroll processor
