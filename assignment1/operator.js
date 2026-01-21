@@ -1,9 +1,9 @@
 function amount()
 {
     let a=0
-    a=a+500
-    a=a+1200
-    a=a-200
+    a=a+10
+    a=a+12
+    a=a-20
     a=a+((18/100)*a)
     console.log(a)
 }
