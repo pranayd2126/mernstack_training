@@ -1,0 +1,34 @@
+ 
+ 
+ 
+ 
+ javascript is single thrided lanuage
+ a thrided can do one task at a time 
+ brower javascript runtime === js engine + web apis + callback queue + event loop
+ Node.js javascriptrun time === js emhin +nodejs api + evevnt loop
+    synchronous  expalne
+
+    console.log("start") //non blocking code
+    for(let i=0;i<1000;i++){ // blocking code
+        console.log(i)
+    }
+    console.log("end") // non blocking code
+
+
+
+
+    asynchronous expalne
+
+
+    console.log("start")                  //non blocking code
+    setTimepout(()=>{
+        console.log("inside settimeout")  // non blocking code
+    } ,5000);                                 // web api / nodejs api  // non blocking code
+    console.log("end")                        // non blocking code
+
+
+
+    synchronous blocking
+    synchronous non blocking
+    asynchronous non blocking
+    asynchronous blocking
