@@ -61,6 +61,7 @@
 
     import exp from 'express';
     import { UserModel } from '../models/UserModel.js';
+//mport { Collection } from 'mongoose';
 
     export const userApi = exp.Router();
 
@@ -74,4 +75,54 @@
             res.status(500).json({message:"err in fetching users",error:err.message});
         }
 
+
+    })
+    //CREATE USER
+    userApi.post('/users',async ( req,res)=>{
+        //get new user from req
+        let newUser=req.body;
+        //Console.log(newUser)
+        //create new user in document
+        let  newUserDoc=new UserModel(newUser);
+        await newUserDoc.save();
+
+        res.status(201).json({message:"User created successfully",payload:newUserDoc});
+    })
+
+    //read user by object id
+    userApi.get('/users/:id',async ( req,res)=>{
+        //get object id from req
+        const objId=req.params.id;
+        //find user by id
+        let userObj= await UserModel.findById(objId);
+        //
+        res.status(200).json({message:"user found",payload:userObj});
+    })
+
+
+    //UPDATE USER by object id
+
+
+    userApi .put("/users/:id",async(req,res)=>{
+        //gte objectId from url param
+        let objId=req.params.id
+        //get modified 
+        let modifiedUser=req.body
+        //update user in document
+       let lastUser = await UserModel.findByIdAndUpdate(objId,{$set:{...modifiedUser} },{new:true});
+       //send resouurce 
+        res.status(200).json({message:"user updated successfully",payload:lastUser});
+
+
+
+    })
+    //DELETE USER by object id
+
+    userApi.delete("/users/:id",async(req,res)=>{
+        //get object id from url param
+        let objId=req.params.id;
+        //delete user from document
+      let deletd= await UserModel.findByIdAndDelete(objId);
+        //send resourse
+        res.status(200).json({message:"user deleted successfully" ,payload:deletd});
     })

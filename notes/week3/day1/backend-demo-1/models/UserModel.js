@@ -1,6 +1,7 @@
 import { Schema ,model } from "mongoose";
 const userSchema = new Schema({
-
+// defining fields
+//field1: dataType
     username:{
         type:String,
         required:[true, "Username is required"],
@@ -15,7 +16,11 @@ const userSchema = new Schema({
         type:Number,
         min:[18, "Age should be at least 18"],
         max:[120, "age shoud be less then25"],
-    }
+    },
 
+},{
+strict: "throw",
+timestamps:true,
 });
+//model creation 
  export const UserModel = model("user", userSchema);

@@ -2,8 +2,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import { connect } from "mongoose";
-import { ProductApi } from "./api/product-api.js";
-import { userApi } from "./api/user-api.js";
+import { ProductApi } from "./APIs/product-api.js";
+import { userApi } from "./APIs/user-api.js";
 
 const app = express();
 const PORT = 3000;
