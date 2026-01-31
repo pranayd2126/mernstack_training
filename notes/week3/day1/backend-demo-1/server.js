@@ -1,35 +1,42 @@
-// crete http server using express js
-import express from 'express';
-import { ProductApi } from './api/product-api.js';
-import { userApi } from './api/user-api.js';
-const app = express();
 
-const PORT=3000;
-// Middleware to parse JSON bodies
+import express from "express";
+import mongoose from "mongoose";
+import { connect } from "mongoose";
+import { ProductApi } from "./api/product-api.js";
+import { userApi } from "./api/user-api.js";
+
+const app = express();
+const PORT = 3000;
+
+// Middleware
 app.use(express.json());
 
-// function Middleware1(req, res, next) {
-//     console.log('Middleware 1 executed');
-//     next();
-// }
-// //to exetute middleware
-//app.use(Middleware1);
+// MongoDB connection
+async function connectDB() {
+  try {
+   await mongoose.connect("mongodb://127.0.0.1:27017/anuragdb2");
+    console.log("DB Connected Success");
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    //Assign PORT number
+    app.listen(PORT, () => {
+      console.log(`Running ${PORT}`);
+    });
+  } catch (err) {
+    console.log("Err in DB connection", err);
+  }
+}
+
+
+
+connectDB();
+
+// Routes
+app.use("/product-api", ProductApi);
+app.use("/user-api", userApi);
+
+app.get("/", (req, res) => {
+  res.send("Hello World from Express.js");
 });
-// Mounting the routers
-app.use('/product-api', ProductApi);
-app.use('/user-api', userApi);
 
 
 
-app.get('/',( req,res)=>{
-    res.send('Hello World from Express.js');
-    console.log('Request received at /');
-
-
-
-
-    
-})
