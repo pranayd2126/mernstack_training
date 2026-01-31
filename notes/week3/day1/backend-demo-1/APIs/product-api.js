@@ -117,7 +117,7 @@ ProductApi.put("/products/:id" ,async (req,res)=>{
     let productObj = await ProductModel.findByIdAndUpdate(
        productId ,
       { $set: { ...product } },
-      { new: true },
+      { new: true,runValidators:true },
     );
     res.status(200).send({message:"updates",payload:productObj})
 })
