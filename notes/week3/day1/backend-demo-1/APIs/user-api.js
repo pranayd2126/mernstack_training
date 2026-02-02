@@ -63,6 +63,7 @@
     import { UserModel } from '../models/UserModel.js';
     import { hash,compare} from 'bcryptjs';
     import jwt from 'jsonwebtoken';
+    import { verifyToken } from '../middleware/verfyToken.js';
 
     export const userApi = exp.Router();
 
@@ -70,7 +71,7 @@
 
     userApi.get('/users',async ( req,res)=>{
         try{
-            const users = await UserModel.find({},{username:1,age:1,password:0});   
+            const users = await UserModel.find({},{username:1,age:1});   
             res.status(200). json({message:'Get all users',payload:users});
         }catch(err){
             res.status(500).json({message:"err in fetching users",error:err.message});
@@ -109,7 +110,7 @@
             return res.status(401).json({message:"invalid credentials"});
         }
         //crate sighrnf tken
-         let signedToken = jwt.sign({usename:userCred.username},'abcdef',{expiresIn:30});
+         let signedToken = jwt.sign({username:userCred.username},'abcdef',{expiresIn:'10m'});
          //save token in httponlu cookie 
 
          res.cookie('token',signedToken,{httpOnly:true,
@@ -119,7 +120,7 @@
 
 
          //send response
-            res.status(200).json({message:"login success"});
+            res.status(200).json({message:"login success",token:signedToken});
         
     });
 
@@ -160,3 +161,8 @@
         //send resourse
         res.status(200).json({message:"user deleted successfully" ,payload:deletd});
     })
+
+    //test toute
+    userApi.get("/test",verifyToken,(req,res)=>{    
+        res.status(200).json({message:"token verified ,access granted"});
+    });

@@ -4,12 +4,15 @@ import mongoose from "mongoose";
 import { connect } from "mongoose";
 import { ProductApi } from "./APIs/product-api.js";
 import { userApi } from "./APIs/user-api.js";
+import cookieParser from "cookie-parser";
 
 const app = express();
 const PORT = 3000;
 
 // Middleware
 app.use(express.json());
+//add cookie-parser middleware
+app.use(cookieParser());
 
 // MongoDB connection
 async function connectDB() {

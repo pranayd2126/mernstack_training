@@ -1,0 +1,14 @@
+user {
+    name,
+    email,
+    password,
+    cart;[ refence of the project]
+}
+product:{
+    productNmae,
+    price,
+    brand
+}
+
+
+use refence

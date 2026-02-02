@@ -84,3 +84,12 @@ Browsers have three main storage locations:
 * Cannot be accessed by JavaScript
 * Safest place to store JWT tokens after authentication
 
+
+
+making authencated request 
+
+when client application makes request after succesull login the hhtponly cookie will beatteced evevry request automatically
+
+the middleware in express can etract the cooie from user using cooike-parser moduel
+
+
