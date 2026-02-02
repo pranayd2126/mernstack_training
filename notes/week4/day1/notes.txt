@@ -1,0 +1,86 @@
+
+---
+
+## ✅ Projections
+
+Projections are used to stop sensitive values from being sent to the client — for example, sending only the **username** and excluding the **password**.
+
+---
+
+## 🔐 Password Hashing
+
+* Passwords must be **hashed before storing in the database**
+* Hashing is **irreversible**
+* Common practice is hashing with **12 rounds**
+* More rounds = more security but **more processing time**
+
+---
+
+## 🌐 Public Routes vs Protected Routes
+
+Every API generally has two types of routes:
+
+### Public Routes
+
+* Can be accessed by **any user**
+* Example: login, signup
+
+### Protected Routes
+
+* Can be accessed only by **authenticated users**
+
+---
+
+## 🔑 User Authentication (Simple Explanation)
+
+User authentication means:
+
+> Submitting credentials and receiving a token
+
+Just like:
+👉 Paying money and getting a movie ticket
+👉 Once you have the ticket (token), you are allowed inside
+
+Once the token is received, the user becomes an **authenticated user**.
+
+---
+
+## 🧾 Steps for User Authentication
+
+1. Receive user credentials (username & password)
+2. API verifies the username
+3. If username matches:
+
+   * Compare hashed password
+4. If password matches:
+
+   * Generate an encrypted token (JWT)
+5. Send the token as response to the client
+
+Once credentials are verified, a **JWT token** is created.
+
+---
+
+## 💾 Token Storage in Browser
+
+Browsers have three main storage locations:
+
+### 1. Local Storage
+
+### 2. Session Storage
+
+### 3. Cookies
+
+### Access by JavaScript:
+
+* Local Storage ✅
+* Session Storage ✅
+* Normal Cookies ✅
+
+### ❗ Most Secure Option:
+
+**HTTP-only Cookies**
+
+* Cannot be accessed by JavaScript
+* Safest place to store JWT tokens after authentication
+

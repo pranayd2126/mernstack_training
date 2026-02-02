@@ -71,7 +71,6 @@
 
 
 import exp from "express"
-
 export const ProductApi=exp.Router();
 
 
@@ -106,7 +105,7 @@ ProductApi.get("/products/:id" ,async (req,res)=>{
 })
 
 
-//put bu id
+//put by id
 
 ProductApi.put("/products/:id" ,async (req,res)=>{
     const productId = req.params.id
@@ -134,4 +133,4 @@ ProductApi.delete("/products/:id" ,async (req,res)=>{
         .json({ message: "product deleted successfully", payload: deletedUser });
 
 
-})
+});
