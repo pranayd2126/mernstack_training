@@ -15,7 +15,7 @@ const productSchema = new Schema(
     brand: {
       type: String,
       required: [true, "Product Brand is required"],
-    },
+    }
   },
   {
     strict: "throw",

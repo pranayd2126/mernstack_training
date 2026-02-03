@@ -1,14 +1,25 @@
 import { Schema,model } from "mongoose";
 
-//cart shcea, 
+//cart shcea,
+// const cartSchmea = new Schema({
+//   product: {
+//     type: Schema.Types.ObjectId,
+//     ref: "product",
+//     required: true,
+//   },
+// });
 
-const cartSchmea= new Schema({
-    product:{
-        type:Schema.Types.ObjectId,
-        ref:"product",
-        required:true
-    }
-})
+const cartSchmea = new Schema({
+  product: {
+    type: Schema.Types.ObjectId,
+    ref: "product",
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    default: 1,
+  },
+});
 
 
 
@@ -33,6 +44,7 @@ const userSchema = new Schema({
         type:[cartSchmea]
 
     }
+    
     
 })
 
