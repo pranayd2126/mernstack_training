@@ -34,6 +34,8 @@ connectDB();
 app.use("/product-api", ProductApi);
 app.use("/user-api", userApi);
 
+
+// Root route
 app.get("/", (req, res) => {
   res.send("Hello World from Express.js");
 });

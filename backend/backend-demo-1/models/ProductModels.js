@@ -26,6 +26,7 @@ const productSchema = new Schema({
 
 }
 ,{
+    
     strict:"throw",
     timestamps:true,
 }

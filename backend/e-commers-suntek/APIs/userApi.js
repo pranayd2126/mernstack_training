@@ -8,14 +8,7 @@ export const userApi= exp.Router();
 
 //CARETE user
 userApi.post('/users',async (req,res)=>{
-//     const user= req.body;
-//    // console.log(user)
-//     let hashpass= await hash(user.password,8)
-//      user.password=hashpass;
-//     let newUser= new UserModel(user)
 
-//     await newUser.save();
-//     res.status(200).send({message:"user saevd"})
 
 let newUser=req.body;
 //validate newUser
@@ -66,11 +59,12 @@ userApi.put('/user-cart/:userid/:uid/productid/:pid',async (req,res)=>{
      return res.status(404).send({message:"user not found"})
 
     }
+    //check product exit
     let product=await ProductModel.findById(pid);
     if(!product){
        return res.status(404).send({message:"product not found"})
     }
-    //check if product is already in cart
+    
 
 
    //if product exit then incremnet
@@ -85,6 +79,7 @@ userApi.put('/user-cart/:userid/:uid/productid/:pid',async (req,res)=>{
             {new :true}
         )
     }
+    //send response
 
     res.status(200).send({message:"product added to cart",user:updatedUser})
 
@@ -92,11 +87,14 @@ userApi.put('/user-cart/:userid/:uid/productid/:pid',async (req,res)=>{
 // read user by id
 
 userApi.get('/users/:uid', async(req,res)=>{
+    //fetch uid from url param
     let {uid}=req.params;
+    //fetch user from db by id and populate cart.product
     let user= await UserModel.findById(uid).populate("cart.product");
     if(!user){
         return res.status(404).send({message:"user not found"})
     }
+    //send response
     res.status(200).send( { message:"user found", payload:user})
 })
 

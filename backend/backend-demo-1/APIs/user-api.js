@@ -69,7 +69,9 @@
 
     userApi.get('/users',async ( req,res)=>{
         try{
+            //fetch all users from db
             const users = await UserModel.find();   
+            // send response
             res.status(200). json({message:'Get all users',payload:users});
         }catch(err){
             res.status(500).json({message:"err in fetching users",error:err.message});
