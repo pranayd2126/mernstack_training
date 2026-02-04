@@ -61,7 +61,7 @@
 
     import exp from 'express';
     import { UserModel } from '../models/UserModel.js';
-//mport { Collection } from 'mongoose';
+    //Import { Collection } from 'mongoose';
 
     export const userApi = exp.Router();
 
@@ -84,8 +84,9 @@
         //Console.log(newUser)
         //create new user in document
         let  newUserDoc=new UserModel(newUser);
+        //save user
         await newUserDoc.save();
-
+           // send responce 
         res.status(201).json({message:"User created successfully",payload:newUserDoc});
     })
 
@@ -95,7 +96,7 @@
         const objId=req.params.id;
         //find user by id
         let userObj= await UserModel.findById(objId);
-        //
+        // send responce 
         res.status(200).json({message:"user found",payload:userObj});
     })
 
