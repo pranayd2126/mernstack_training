@@ -1,24 +1,12 @@
-let date1= new Date(2022,0,1)
-// let date2=new Date(2024,0,1)
+ const obj1 = {
+  name: "Pranay",
+  address: { city: "Hyderabad" }
+};
 
-// //find diff
+const obj2 = obj1;   // shallow copy (reference copy)
 
-//  if(date1>date2){
-//     [date1,date2]=[date2,date1]
+obj2.name = "Reddy";
+obj2.address.city = "Delhi";
 
-//  }
-
-// //find year
-
-// let years=date2.getFullYear()-date1.getFullYear()
-// //find months
-// let months=date2.getMonth()-date1.getMonth()
-//  if (months<0){
-//     years--;
-//     months+=12;
-//  }
-// let days=date2.getDate()-date1.getDate()
-//     if (days<0){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-
-// console.log(years,months,days)
-
+console.log(obj1.name);          // Reddy
+console.log(obj1.address.city);  // Delhi ❗

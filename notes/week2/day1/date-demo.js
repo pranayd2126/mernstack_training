@@ -50,19 +50,31 @@ import { b } from "./day-1module1"
 
 
 
- let obj={
-    a:10,
-    b:20    
- }
+//  let obj={
+//     a:10,
+//     b:20    
+//  }
 
- let copyObj={...obj}
-console.log(copyObj)
+//  let copyObj={...obj}
+// console.log(copyObj)
 
 
- let student={
-     collageName:"anurag unityr",
-     collageAddres:{
-        street:"uppal"
-     }
+//  let student={
+//      collageName:"anurag unityr",
+//      collageAddres:{
+//         street:"uppal"
+//      }
 
- }
+//  }
+ const obj1 = {
+  name: "Pranay",
+  address: { city: "Hyderabad" }
+};
+
+const obj2 = obj1;   // shallow copy (reference copy)
+
+obj2.name = "Reddy";
+obj2.address.city = "Delhi";
+
+console.log(obj1.name);          
+console.log(obj1.address.city);  

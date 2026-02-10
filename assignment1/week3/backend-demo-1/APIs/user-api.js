@@ -61,7 +61,7 @@
 
     import exp from 'express';
     import { UserModel } from '../models/UserModel.js';
-    //Import { Collection } from 'mongoose';
+//mport { Collection } from 'mongoose';
 
     export const userApi = exp.Router();
 
@@ -69,7 +69,9 @@
 
     userApi.get('/users',async ( req,res)=>{
         try{
+            //fetch all users from db
             const users = await UserModel.find();   
+            // send response
             res.status(200). json({message:'Get all users',payload:users});
         }catch(err){
             res.status(500).json({message:"err in fetching users",error:err.message});
@@ -84,9 +86,8 @@
         //Console.log(newUser)
         //create new user in document
         let  newUserDoc=new UserModel(newUser);
-        //save user
         await newUserDoc.save();
-           // send responce 
+
         res.status(201).json({message:"User created successfully",payload:newUserDoc});
     })
 
@@ -96,7 +97,7 @@
         const objId=req.params.id;
         //find user by id
         let userObj= await UserModel.findById(objId);
-        // send responce 
+        //
         res.status(200).json({message:"user found",payload:userObj});
     })
 

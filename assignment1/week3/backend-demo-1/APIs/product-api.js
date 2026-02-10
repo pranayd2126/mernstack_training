@@ -71,15 +71,14 @@
 
 
 import exp from "express"
-
 export const ProductApi=exp.Router();
-
-
 import { ProductModel } from "../models/ProductModels.js";
 
 // Get all products
 ProductApi.get("/products" ,async (req,res)=>{
+  // fetch all products from db
   const products= await ProductModel.find();
+  //SEND RESPONSE
   res.status(200).send({message:"all prodycts",payload: products})
 })
 
@@ -87,9 +86,13 @@ ProductApi.get("/products" ,async (req,res)=>{
 //post products
 
 ProductApi.post("/products",async (req,res)=>{
+  // read product from req body
   const product= req.body;
+  // create new product model
   const newProduct= new ProductModel(product)
+  // save to db
   await newProduct.save();
+  // send response
   res.status(201).json({message:"product created succesfully",payload:newProduct})
 
 })
@@ -97,9 +100,12 @@ ProductApi.post("/products",async (req,res)=>{
 //GET BY ID
 
 ProductApi.get("/products/:id" ,async (req,res)=>{
+  // read product id from req params
   const productId= (req.params.id)
+  // fetch product from db by id
 
   let productObj= await ProductModel.findById(productId)
+  // send response
 
    res.status(200).json({ message: "product found", payload: productObj });
 
@@ -109,29 +115,34 @@ ProductApi.get("/products/:id" ,async (req,res)=>{
 //put bu id
 
 ProductApi.put("/products/:id" ,async (req,res)=>{
+  // read product id from req params
     const productId = req.params.id
+    // validate product id
     if (!productId) {
       return res.status(400).send({ message: "Product ID is required" });
     }
+    // read product from req body
     const product= req.body
+    // update product in db
     let productObj = await ProductModel.findByIdAndUpdate(
        productId ,
       { $set: { ...product } },
       { new: true,runValidators:true },
     );
+    // send response
     res.status(200).send({message:"updates",payload:productObj})
 })
 
 
 // deleter by id
 ProductApi.delete("/products/:id" ,async (req,res)=>{
+  // read product id from req params
   const productId=req.params.id
   const product = req.body
-
-    let deletedUser=await ProductModel.findByIdAndDelete(productId)
-      res
-        .status(200)
-        .json({ message: "product deleted successfully", payload: deletedUser });
+  // delete product from db
+  let deletedUser=await ProductModel.findByIdAndDelete(productId)
+  // send response
+  res.status(200).json({ message: "product deleted successfully", payload: deletedUser });
 
 
 })
