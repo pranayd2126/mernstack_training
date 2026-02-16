@@ -1,0 +1,51 @@
+
+
+.a{
+    display: none;
+}
+.b{
+    display: none;
+}
+.c{
+    display: none;
+}
+@media screen and (max-width: 500px) {
+    body{
+        background-color: rgb(235, 135, 135);
+        height: 1000px;
+    };
+    .b{
+        display: block;
+    }
+    
+}
+/* @media screen and (min-width: 700px) {
+    body{
+        background-color: rgb(235, 135, 135);
+        height: 1000px;
+    };
+    .b{
+        display: block;
+    }
+    .a{
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    body{
+        background-color: rgb(235, 135, 135);
+        height: 1000px;
+    };
+    .c{
+        display: block;
+    }
+    .b{
+        display: block;
+    }
+    .a{
+        display: block;
+    }
+    
+} */

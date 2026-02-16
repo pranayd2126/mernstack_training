@@ -1,0 +1,22 @@
+
+
+*{
+    margin: 0;
+    padding:0;
+}
+h1{
+    width: 700px;
+    text-align: center;
+    padding: 50px;
+    border: 10px solid black;
+    margin: 50px ;
+    box-sizing: content-box;
+
+}
+a{
+    display: block;
+}
+img{
+    display: block;
+    margin: auto;
+}

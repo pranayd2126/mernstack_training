@@ -1,0 +1,93 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(207, 184, 184);
+    height: 1000px;
+    position: relative;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+   
+
+}
+.logo{
+    width: 50px;
+    border-radius: 50%;
+
+}
+ nav ul{
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+}
+nav ul a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(255, 253, 253);
+}
+nav ul a:hover{
+    color: rgb(255, 138, 4);
+}
+main{
+    margin: 0px,70px;
+    
+}
+.row{
+    
+    display: flex;
+    justify-content: space-around;
+ 
+}
+.row.card{
+    width: 500px;
+    height: 300px;
+    text-align: center;
+  
+}
+.card{
+    text-align: center;
+    box-shadow: 1px 1px 10px grey;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+
+}
+.card img{
+    width: 50%;
+    border-radius: 5px;
+    height: 100px;
+   
+}
+.card button{
+    border:none;
+    padding: 10px;
+    background-color: rgb(255, 138, 4);
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    padding: 10px 20px;
+  border-radius: 15px;
+
+}
+footer{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    height: 150px;
+    padding: 20px;
+}
+footer h3{
+    font-size: 1rem;
+    margin-top: 30px;
+
+}
