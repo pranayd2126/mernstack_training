@@ -1,72 +1,113 @@
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-nav {
-    height: 40px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    align-items: center;
-    padding-left: 50px;
-    font-size: 20px;
-    color: rgb(255, 26, 26);
-}
-/* main section */
-main {
-    height: 60vh;
-    background-color: #ff0000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 100px;
-    color: white;
+.hero {
+  height: 60vh;
+  background: url("assest/hero.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 80px;
+  color: white;
 }
 
-.main {
-    max-width: 500px;
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.main h1 {
-    font-size: 40px;
-    margin-bottom: 25px;
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-.main p {
-    font-size: 15px;
-    line-height: 1.5;
+.hero-text button {
+  padding: 10px 25px;
+  background: orange;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-.logo img {
-    width: 200px;
+.activity {
+  display: flex;
+  padding: 60px 80px;
+  align-items: center;
 }
 
-/* bottom cars */
+.activity .left {
+  flex: 1;
+}
+
+.activity .left h1 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.activity .right {
+  flex: 1;
+}
+
+.activity img {
+  width: 100%;
+}
+
+
+.container {
+  padding: 60px 80px;
+}
+
+.container h1 {
+  font-size: 32px;
+  color: #003366;
+  margin-bottom: 40px;
+}
+
 .cards {
-    display: flex;
-    height: 35vh;
+  display: flex;
+  gap: 20px;
 }
 
 .card {
-    flex: 1;
-     border-right: 3px solid #E60000;
-    background-color: #860303;
-    color: white;
-    padding: 40px;
+  flex: 1;
+  background: #f3f3f3;
+  text-align: center;
+  padding: 30px;
 }
 
-.card:last-child {
-    border-right: none;
-}
-
-.card h3 {
-    margin-bottom: 20px;
-    font-size: 20px;
+.card img {
+  width: 100px;
+  margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 15px;
-    line-height: 1.5;
+  font-weight: bold;
+  color: #860303;
 }
+
+/* FOOTER */
+footer {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+footer h1 {
+  font-size: 28px;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.types button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+/* 
