@@ -13,13 +13,37 @@ function Header() {
       <nav>
         <ul className="flex gap-10">
           <li>
-            <NavLink to="/"> HOME</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-blue-500 font-bold" : "text-gray-700"
+              }
+            >
+              {" "}
+              HOME
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/products"> PRODUCTS</NavLink>
+            <NavLink
+              to="/products"
+              className={({ isActive }) =>
+                isActive ? "text-blue-500 font-bold" : "text-gray-700"
+              }
+            >
+              {" "}
+              PRODUCTS
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact"> CONTACT</NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "text-blue-500 font-bold" : "text-gray-700"
+              }
+            >
+              {" "}
+              CONTACT
+            </NavLink>
           </li>
         </ul>
       </nav>

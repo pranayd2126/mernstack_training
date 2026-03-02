@@ -5,6 +5,7 @@ import Home from './components/Home'
 import ProductsList from './components/ProductsList'
 import ContactUs from './components/ContactUs'
 import { RouterProvider } from 'react-router-dom'
+import Product from './components/Product'
 
 function App() {
   const routerObj = createBrowserRouter([
@@ -24,6 +25,10 @@ function App() {
         {
           path:"contact",
           element:<ContactUs />
+        }
+        ,{
+          path:"product",
+          element:<Product />
         }
       ]
     }
