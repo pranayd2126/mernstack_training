@@ -144,3 +144,16 @@ Steps :
         4. Create "style.css" file and add "@import "tailwindcss" in it.
         5. Run the watch command "npx @tailwindcss/cli -i ./style.css -o ./output.css --watch"
         6. Create HTML files and add <link href="./output.css" rel="stylesheet"> in head.
+
+
+############rcfe
+
+
+react-router-dom
+
+        setep
+
+
+
+
+        connecting compontes to its parent with a path 
