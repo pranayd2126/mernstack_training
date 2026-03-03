@@ -157,3 +157,28 @@ react-router-dom
 
 
         connecting compontes to its parent with a path 
+
+
+
+
+creating cotext abject and provider and consumer
+every context abject has contex provied and a context consumer
+cintext provider i usedto provied stage throuogh contex object where as the components can cnsume the stage through the context object consumer
+4.a compont can consume the state of context ptovirer with use context hook 
+
+
+
+
+
+### create user contex abject and provide
+
+User State
+{
+    name : "anand",
+    age : 20,
+    email: "ravi@gmail.com
+}
+
+& function to modify User by updating a properties
+
+Consume This Context in Components A and B Update from both
