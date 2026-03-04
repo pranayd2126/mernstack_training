@@ -1,4 +1,5 @@
-import { useForm } from 'react-hook-form'
+import {useforms} from 'react-hook-from'
+
 
 function FormDemo() {
     const {register, handleSubmit, formState:{errors}} = useForm();
