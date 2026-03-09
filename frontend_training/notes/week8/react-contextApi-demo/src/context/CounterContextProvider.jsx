@@ -7,6 +7,7 @@ function CounterContextProvider({children}) {
     const changeCounter1=()=>{
         setCounter1(counter1+1);
     }
+    
 
   return (
     <CounterContext.Provider value={{counter1, changeCounter1}}>
