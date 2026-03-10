@@ -16,9 +16,9 @@ function App() {
       {/* <StateDemo /> */}
       {/* Form Demo */}
       {/* <FormDemo /> */}
-      {/* Task Management System */}
-      {/* <TaskManager /> */}
-      <SideEffectsUseEffect />
+      Task Management System
+       <TaskManager /> 
+      {/* <SideEffectsUseEffect /> */}
     </div>
   )
 }

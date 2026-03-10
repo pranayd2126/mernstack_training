@@ -9,12 +9,10 @@ function SearchBar({ onSearch }) {
 
   const searchValue = watch("search");
 
-  // Autofocus
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
-  // Debounce search
   useEffect(() => {
     clearTimeout(debounceRef.current);
 

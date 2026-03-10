@@ -5,10 +5,8 @@ import CountryList from "./components/CountryList";
 function App() {
   const [countries, setCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
-
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [query, setQuery] = useState("");
 
   useEffect(() => {
@@ -44,8 +42,8 @@ function App() {
 
   if (loading)
     return (
-      <h1 className="text-center text-2xl mt-10 font-semibold">
-        Loading Countries...
+      <h1 className="text-center text-red-300 mt-10 font-semibold">
+        Loading 
       </h1>
     );
 

@@ -18,3 +18,15 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 ### closer
+
+server lo  app.use('/user-api',userroute)
+
+
+
+routers lo app.get('/get-users',getUsers)  app.post('/add-user',addUser)
+
+
+controlrtlo 
+const getusrs=(req,res)=>{
+    res.send(users)
+} 
