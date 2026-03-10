@@ -17,7 +17,7 @@ function TaskManager() {
     }
   return (
     <div>
-        <h1 className='text-4xl text-blue-400'>Task Manager</h1>
+        <h1 className='text-4xl text-blue-400 mb-5'>Task Manager</h1>
         <div className='flex justify-around'>
             <AddTask addNewTask={addNewTask} deleteTask={deleteTask}/>
             <TasksList tasks={tasks}/>
